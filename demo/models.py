@@ -2,7 +2,6 @@
 # Apr.26.2016
 from django.db import models
 
-
 class Message(models.Model):
     """ 消息
     status:消息状态（0：正常，1：删除），默认为0；
@@ -13,8 +12,7 @@ class Message(models.Model):
     status = models.SmallIntegerField(verbose_name=u'状态', default=0)
     title = models.CharField(verbose_name=u'消息标题', max_length=64)
     content = models.TextField(verbose_name=u'消息内容', null=True, blank=True)
-    category = models.PositiveSmallIntegerField(verbose_name=u'消息类型',
-                                                default=0)
+    category = models.PositiveSmallIntegerField(verbose_name=u'消息类型', default=0)
 
     def __unicode__(self):
         return u'%s' % self.title

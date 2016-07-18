@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from demo import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^send_msg/$',views.send_msg),
+    url(r'^get_msgs/([0-9]*)$',views.get_msgs),
+    url(r'^del_msg/([0-9]*)$', views.del_msg),
 ]
